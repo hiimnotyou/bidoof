@@ -49,10 +49,10 @@
             if (!iframe) {
                 const url = prompt("Enter the URL for the fullscreen iframe:");
                 if (url) {
-                    iframe = document.createElement("iframe", { is: 'x-frame-bypass' });
-                    iframe.id = "x-frame-bypass";
-                    iframe.setAttribute("src", url);
-                    iframe.setAttribute("sandbox", "allow-same-origin allow-scripts");
+                    iframe = document.createElement("iframe");
+                    iframe.id = "x-frame-bypass"; // Set the id attribute
+                    iframe.src = url;
+                    iframe.sandbox = "allow-same-origin allow-scripts";
                     document.getElementById("iframe-container").appendChild(iframe);
                 }
             } else {
@@ -66,5 +66,5 @@
     </script>
 </div>
 </body>
- <script src="script.js"></script>
+   <script src="script.js"></script> 
 </html>
