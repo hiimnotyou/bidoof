@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Toggle fullscreen iframe with URL input</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #iframe-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+	<title>Toggle fullscreen iframe with URL input</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		#iframe-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	</style>
 </head>
+
 <body>
-<div id="iframe-container">
-    <script>
-        const toggleCode = "qweasdzxcp";
+	<div id="iframe-container">
+		<script>
+			const toggleCode = "qweasdzxcp";
         let toggleIndex = 0; // Index to track progress through the code
         let iframe;
 
@@ -44,17 +48,13 @@
             }
         }
 
-        // Function to toggle the iframe and set its URL
+        // Function to toggle the iframe and set its URL to "https://nebulaproxy.io"
         function toggleIframe() {
             if (!iframe) {
-                const url = prompt("Enter the URL for the fullscreen iframe:");
-                if (url) {
-                    iframe = document.createElement("iframe", { is: 'x-frame-bypass' });
-                    iframe.id = "x-frame-bypass";
-                    iframe.setAttribute("src", url);
-                    iframe.setAttribute("sandbox", "allow-same-origin allow-scripts");
-                    document.getElementById("iframe-container").appendChild(iframe);
-                }
+                iframe = document.createElement("iframe", { is: 'x-frame-bypass' });
+                iframe.id = "x-frame-bypass";
+                iframe.setAttribute("src", "https://nebulaproxy.io"); // Set the URL here
+                document.getElementById("iframe-container").appendChild(iframe);
             } else {
                 document.getElementById("iframe-container").removeChild(iframe);
                 iframe = null;
@@ -63,9 +63,8 @@
 
         // Add an event listener to capture key presses
         document.addEventListener("keydown", checkToggleCode);
-    </script>
-</div>
-<script src="script.js"></script>
+		</script>
+	</div>
 </body>
 
 </html>
