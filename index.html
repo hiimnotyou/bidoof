@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>bidoof.app</title>
+    <title>Toggle fullscreen iframe with URL input</title>
     <style>
         body {
             margin: 0;
@@ -49,10 +49,10 @@
             if (!iframe) {
                 const url = prompt("Enter the URL for the fullscreen iframe:");
                 if (url) {
-                    iframe = document.createElement("iframe");
-                    iframe.id = "x-frame-bypass"; // Set the id attribute
-                    iframe.src = url;
-                    iframe.sandbox = "allow-same-origin allow-scripts";
+                    iframe = document.createElement("iframe", { is: 'x-frame-bypass' });
+                    iframe.id = "x-frame-bypass";
+                    iframe.setAttribute("src", url);
+                    iframe.setAttribute("sandbox", "allow-same-origin allow-scripts");
                     document.getElementById("iframe-container").appendChild(iframe);
                 }
             } else {
@@ -64,8 +64,8 @@
         // Add an event listener to capture key presses
         document.addEventListener("keydown", checkToggleCode);
     </script>
-</div
-    <script src="script.js"></iframe>
+</div>
+<script src="script.js"></script>
 </body>
-   <script src="script.js"></script> 
+
 </html>
