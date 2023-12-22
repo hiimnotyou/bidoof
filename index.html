@@ -2,37 +2,67 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<style>
-		body {
-			background-color: #000;
-			color: #0f0;
-			font-family: 'Courier New', monospace;
-		}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"/>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <style>
+        body {
+            background: linear-gradient(90deg, #000, #003300);
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            transition: all 0.5s ease;
+        }
 
-		.card {
-			background-color: #000;
-			border-color: #0f0;
-		}
+        h1, h5 {
+            font-family: 'Lucida Console', Courier, monospace;
+        }
 
-		.btn {
-			background-color: #0f0;
-			color: #000;
-		}
+        .navbar, .footer {
+            background-color: #000;
+        }
 
-		footer {
-			position: fixed;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			background-color: #000;
-			color: #0f0;
-			text-align: center;
-			padding: 10px 0;
-		}
+        .card {
+            background-color: #000;
+            border: 1px solid #0f0;
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 255, 0, 0.1);
+            margin-bottom: 1rem;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
 
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover {
+            background-color: #0f0;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            transition: all 0.5s ease;
+        }
+      
+      
 		.modal-dialog {
 			max-width: 100%;
 			margin: 0;
@@ -52,75 +82,26 @@
 			cursor: pointer;
 			z-index: 1;
 		}
-	</style>
+    </style>
 </head>
 
 <body>
-	<div class="container mt-5">
-		<div class="row">
-			<div class="col-lg-8 offset-lg-2">
-				<h1>Welcome to Umbral Store</h1>
-				<p>Explore our latest products and hopefully purchase atleast one.</p>
-				<div class="card text-center mt-4">
-					<div class="card-body">
-						<h5 class="card-title">Umbral Executor V3</h5>
-						<p class="card-text">The latest version of our Roblox scripting utility.</p>
-						<button class="btn btn-primary" data-toggle="modal" data-target="#buyModal">Buy Now</button>
-					</div>
-				</div>
-				<div class="card text-center mt-4">
-					<div class="card-body">
-						<h5 class="card-title">UEX V2</h5>
-						<p class="card-text">Our Roblox aimbot/triggerbot, coming soon.</p>
-						<button class="btn btn-primary" disabled>Coming Soon</button>
-					</div>
-				</div>
-<!-- ... -->
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="#">Umbral Store</a>
+    </nav>
 
-<div class="card text-left mt-4">
-	<div class="card-body">
-		<h5 class="card-title">Terms of Service</h5>
-		<p class="card-text">
-		</p>
-		<button class="btn btn-primary" data-toggle="modal" data-target="#tosModal">View</button>
-	</div>
-</div>
-
-<!-- ... -->
-
-<!-- Terms of Service Modal -->
-<div class="modal fade" id="tosModal" tabindex="-1" role="dialog" aria-labelledby="tosModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content">
-			<div class="modal-body p-0">
-				<span class="close-button" data-dismiss="modal">&times;</span>
-				<div class="card text-left mt-4">
-					<div class="card-body">
-						<h5 class="card-title">Terms of Service</h5>
-						<p style="font-weight: bold; color: red;" class="card-text">
-							By purchasing our products, you agree to the following terms:
-							<ul>
-								<li>The product is provided "as is", without warranty of any kind.</li>
-								<li>We reserve the right to discontinue the product at any time.</li>
-								<li>You will not use the product for any illegal activities.</li>
-								<li>Violation of these terms may result in termination of your access to the product.</li><br>
-								<li style="font-weight: bold; color: red;">You agree not to engage in any of the following activities:</li>
-								<li>Violating any laws or regulations.</li>
-								<li>Reverse engineering, decompiling, disassembling, or attempting to derive the source code.</li>
-								<li>Using the Service for any illegal or unauthorized purpose.</li>
-								<li>Attempting to gain unauthorized access to the Service or its related systems.</li>
-							</ul>
-						</p>
-					</div>
-				</div>
-				</div>
-				</div>
-				</div>
-</div>
-	<footer>
-		<p>© 2022 Umbral Store. All rights reserved.</p>
-	</footer>
-
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center animate__animated animate__fadeIn" data-aos="fade-up">
+                <h1>Welcome to the Umbral Store</h1>
+                <p>Explore our latest products and hopefully purchase at least one.</p>
+                <div class="card text-center mt-4 animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-robot"></i> Umbral Executor V3</h5>
+                        <p class="card-text">The latest version of our scripting utility.</p>
+                        <button class="btn hvr-grow" data-toggle="modal" data-target="#buyModal"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                    </div>
+                </div>
 	<!-- Buy Now Modal -->
 	<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel"
 		aria-hidden="true">
@@ -133,7 +114,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>    </div>
 </body>
 
 </html>
