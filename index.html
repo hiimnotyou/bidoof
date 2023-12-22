@@ -2,13 +2,12 @@
 <html>
 
 <head>
-	    <link rel="icon" type="image/png" sizes="32x32" href="https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/77481bed-1249-47bc-5932-bb41abc7da00/shopitem">
+  	    <link rel="icon" type="image/png" sizes="32x32" href="https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/77481bed-1249-47bc-5932-bb41abc7da00/shopitem">
     <link rel="icon" type="image/png" sizes="16x16" href="https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/77481bed-1249-47bc-5932-bb41abc7da00/shopitem">
 	    <title>Umbral Store</title>
     <meta property="og:title" content="Umbral Store">
     <meta property="og:description" content="Explore our latest products and hopefully purchase at least one.">
     <meta property="og:url" content="https://bidoof.app">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -18,6 +17,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <style>
+      .modal-backdrop fade show {
+        opacity: 1;
+      }
         body {
             background: linear-gradient(90deg, #000, #003300);
             color: #0f0;
@@ -89,6 +91,14 @@
 			cursor: pointer;
 			z-index: 1;
 		}
+      
+          .modal-backdrop {
+        display: none;
+    }
+      
+    #tosModal .card:hover, #tosModal .btn:hover {
+        transform: none !important;
+    }
     </style>
       <script>
         $(document).ready(function() {
@@ -96,6 +106,16 @@
                 $('.modal-backdrop').css('pointer-events', 'none');
             });
             $('#buyModal').on('hidden.bs.modal', function() {
+                $('.modal-backdrop').css('pointer-events', 'auto');
+            });
+        });
+    </script>
+        <script>
+        $(document).ready(function() {
+            $('#tosModal').on('shown.bs.modal', function() {
+                $('.modal-backdrop').css('pointer-events', 'none');
+            });
+            $('#tosModal').on('hidden.bs.modal', function() {
                 $('.modal-backdrop').css('pointer-events', 'auto');
             });
         });
@@ -119,8 +139,57 @@
                         <button class="btn hvr-grow" data-toggle="modal" data-target="#buyModal"><i class="fas fa-shopping-cart"></i> Buy Now</button>
                     </div>
                 </div>
+              				<div class="card text-center mt-4 animate__animated animate__fadeInUp">
+					<div class="card-body">
+						<h5 class="card-title">UEX V2</h5>
+						<p class="card-text">Our Roblox aimbot/triggerbot, coming soon.</p>
+						<button class="btn btn-primary" disabled>Coming Soon</button>
+					</div>
+				</div>
+<!-- ... -->
+
+<div class="card text-center mt-4 animate__animated animate__fadeInUp">
+	<div class="card-body">
+		<h5 class="card-title">Terms of Service</h5>
+		<p class="card-text">
+		</p>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#tosModal">View</button>
+	</div>
+</div>
+
+<!-- ... -->
+
+<!-- Terms of Service Modal -->
+<div class="text-center mt-4 animate__animated animate__fadeInUp modal fade" id="tosModal" tabindex="-1" role="dialog" aria-labelledby="tosModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content">
+			<div class="modal-body p-0">
+				<span class="close-button" data-dismiss="modal">&times;</span>
+				<div class="card text-left mt-4">
+					<div class="card-body">
+						<h5 class="card-title">Terms of Service</h5>
+						<p style="font-weight: bold; color: red;" class="card-text">
+							By purchasing our products, you agree to the following terms:
+							<ul>
+								<li>The product is provided "as is", without warranty of any kind.</li>
+								<li>We reserve the right to discontinue the product at any time.</li>
+								<li>You will not use the product for any illegal activities.</li>
+								<li>Violation of these terms may result in termination of your access to the product.</li><br>
+								<li style="font-weight: bold; color: red;">You agree not to engage in any of the following activities:</li>
+								<li>Violating any laws or regulations.</li>
+								<li>Reverse engineering, decompiling, disassembling, or attempting to derive the source code.</li>
+								<li>Using the Service for any illegal or unauthorized purpose.</li>
+								<li>Attempting to gain unauthorized access to the Service or its related systems.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				</div>
+				</div>
+				</div>
+</div>
 	<!-- Buy Now Modal -->
-	<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel"
+	<div class="text-center mt-4 animate__animated animate__fadeInUp modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
@@ -133,5 +202,8 @@
 		</div>
 	</div>    </div>
 </body>
-
+<script>
+  document.querySelectorAll('.modal-backdrop').forEach(function(element) {
+    element.parentNode.removeChild(element);
+  });</script>
 </html>
