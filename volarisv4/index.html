@@ -18,6 +18,10 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+      <link
+        href="https://cdn.sell.app/embed/style.css"
+        rel="stylesheet"
+    />
 	<style>
 
     * {
@@ -154,7 +158,10 @@
 					<div class="card-body">
 						<h5 class="card-title"><i class="fas fa-robot"></i>Volaris V4</h5>
 						<p class="card-text">The latest version of our scripting utility.</p>
-						<button class="btn hvr-grow" data-toggle="modal" data-target="#buyModal"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+						<button class="btn hvr-grow"         data-sell-store="38070"
+        data-sell-product="200764"
+        data-sell-darkmode="{ true | false }"
+        data-sell-theme=""><i class="fas fa-shopping-cart"></i> Buy Now</button>
 					</div>
 				</div>
 				<!-- External Card -->
@@ -212,24 +219,14 @@
 					</div>
 				</div>
 				<!-- Buy Modal -->
-				<div class="text-center mt-4 animate__animated animate__fadeInUp modal fade" id="buyModal" tabindex="-1"
-					role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered modal-lg">
-						<div class="modal-content">
-							<div class="modal-body p-0">
-								<span class="close-button" data-dismiss="modal">&times;</span>
-								<iframe src="https://embed.sellix.io/product/65c012c1eeda2"
-									style="border:0; width:100%; height:90vh;"></iframe>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+				    <script
+        src="https://cdn.sell.app/embed/script.js"
+        type="module"
+    >
+    </script>
 </body>
 <script>
-	document.querySelectorAll('.modal-backdrop').forEach(function(element) {
-    element.parentNode.removeChild(element);
-  });
+
 </script>
 
 </html>
