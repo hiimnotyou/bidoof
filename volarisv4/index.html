@@ -24,7 +24,10 @@
         rel="stylesheet"
     />
 	<style>
-
+@font-face {
+    font-family: 'Theobi';
+    src: url('https://www.bidoof.app/theobi.ttf') format('truetype');
+}
     * {
       padding: 0px; /* Reset shit */
       margin: 0px; /* Reset more shit */
@@ -133,6 +136,10 @@
       .fa-robot {
         padding-right: 10px;
       }
+      
+      #nut {
+          font-family: 'Theobi', sans-serif;
+      }
 	</style>
 	<script>
 		$(document).ready(function() {
@@ -158,7 +165,7 @@
 
 <body>
 	<nav class="navbar navbar-dark">
-		<a class="navbar-brand" href="#">Volaris Store</a>
+		<a id="nut" class="navbar-brand" href="#">Volaris Store</a>
 	</nav>
 
 	<div class="container py-5">
